@@ -582,30 +582,6 @@ function renderEnd() {
   const barColor = section.isMastery ? "#7b1fa2" : section.color;
 
   let reviewBoxHtml = "";
-  if (section.isMastery && pct >= 70 && SRC) {
-    let buttonsHtml = "";
-    if (SRC === "etsy") {
-      buttonsHtml = `<a class="review-btn" href="https://www.etsy.com/your/purchases" target="_blank" rel="noopener">Leave a Review on Etsy</a>`;
-    } else if (SRC === "amazon") {
-      if (PAPERBACK_ASIN) {
-        buttonsHtml += `<a class="review-btn" href="https://www.amazon.com/review/create-review?asin=${PAPERBACK_ASIN}" target="_blank" rel="noopener">Review the Paperback</a>`;
-      }
-      if (HARDCOVER_ASIN) {
-        buttonsHtml += `<a class="review-btn" href="https://www.amazon.com/review/create-review?asin=${HARDCOVER_ASIN}" target="_blank" rel="noopener">Review the Hardcover</a>`;
-      }
-    }
-    if (buttonsHtml) {
-      reviewBoxHtml = `
-        <div class="review-box">
-          <div class="review-header">🔒 Notice: For Parents &amp; Educators</div>
-          <div class="review-question">How did you like this complete resource bundle?</div>
-          <p>Thank you for choosing Agarutan Print! We hope this combination of printable worksheets, the digital fillable PDF, and the interactive quiz bonus is helping to build your student's skills.</p>
-          <p>If this comprehensive resource bundle added value to your student's learning experience, please take a brief moment to share your feedback. Your review helps us continue creating high-quality learning assets!</p>
-          ${buttonsHtml}
-        </div>
-      `;
-    }
-  }
 
   if (pct >= 70) {
     let tier = "🌟 Great Job";
